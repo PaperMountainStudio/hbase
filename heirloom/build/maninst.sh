@@ -1,4 +1,4 @@
-#!/sbin/sh
+#!/bin/sh
 
 # Sccsid @(#)maninst.sh	1.8 (gritter) 01/27/07
 

@@ -1,4 +1,4 @@
-#!/sbin/sh
+#!/bin/sh
 
 # Sccsid @(#)crossln.sh	1.4 (gritter) 3/10/05
 

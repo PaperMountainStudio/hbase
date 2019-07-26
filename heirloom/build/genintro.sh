@@ -1,4 +1,4 @@
-#!/sbin/sh
+#!/bin/sh
 
 # Sccsid @(#)genintro.sh	1.6 (gritter) 6/24/05
 
