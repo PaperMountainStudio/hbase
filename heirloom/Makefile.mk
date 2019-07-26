@@ -1,8 +1,3 @@
-all: intro.1
-
-intro.1: intro.1.in
-	$(SHELL) build/genintro intro.1.in >intro.1
-
 clean:
 	rm -f heirloom.pkg core log *~
 
