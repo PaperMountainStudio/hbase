@@ -1,15 +1,13 @@
 #!/bin/sh -e
 
-SHELL=/bin/sh
-INSTALL=/usr/bin/install
-PREFIX="$PWD"/build
-MANDIR="$PREFIX"/share/man
-BINDIR="$PREFIX"/bin
-LIBDIR="$PREFIX"/lib
-
-# to be overriden by user
-CFLAGS=
-LDFLAGS=
+: ${PREFIX:="$PWD/build"}
+: ${SHELL:=/bin/sh}
+: ${INSTALL:=/usr/bin/install}
+: ${CFLAGS:="-0s -s"}
+: ${LDFLAGS:=-s}
+: ${MANDIR:="$PREFIX/share/man"}
+: ${BINDIR:="$PREFIX/bin"}
+: ${LIBDIR:="$PREFIX/lib"}
 
 mkdir -p "$PREFIX"
 
@@ -35,6 +33,12 @@ usage:
 --------
 provide no arguments to build
 './build.sh install' to install
+
+Make will read variables from the environment,
+to add environment flags for just one command
+prefix it with the variables to set.
+Example:
+PREFIX=/path/to/build CFLAGS='-O2 -pipe' ./build.sh
 EOF
         exit
         ;;
