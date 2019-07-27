@@ -1,9 +1,8 @@
 SHELL = /bin/sh
 
-SUBDIRS = build libwchar libcommon libuxre _install \
-	bc cpio csplit dc diff diff3 factor file fmt \
-	getopt groups id man more od pgrep sdiff \
-	stty tabs ul users
+SUBDIRS = build libcommon libuxre \
+	bc cpio dc diff file fmt \
+	man pgrep stty
 
 dummy: makefiles all
 
