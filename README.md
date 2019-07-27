@@ -49,13 +49,13 @@ Some programs which you ***might*** still want:
 * diff3
 * dircmp
 * factor
-* groups (redundant, /etc/group)
+* groups *(redundant, /etc/group)*
 * getopt
 * hd
 * id
 * mail
-* man (bash/ksh only)
-* more (just use less)
+* man *(bash/ksh only)*
+* more *(just use less)*
 * news
 * pax
 * sdiff
