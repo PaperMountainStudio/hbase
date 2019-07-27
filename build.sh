@@ -27,6 +27,11 @@ build() {
     do_make "$2"
     cd ..
 }
+patchall() {
+    find patches -type f | while read -r patch ; do
+        patch -p0 < "$patch"
+    done
+}
 
 case "$1" in
     *help|-h)
@@ -61,6 +66,7 @@ EOF
         ln -s pgrep "$PREFIX"/bin/pkill
         ;;
     *) 
+        patchall
         build heirloom-devtools
         build heirloom
         build one-true-awk

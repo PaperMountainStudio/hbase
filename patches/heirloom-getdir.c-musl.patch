@@ -1,0 +1,17 @@
+--- heirloom/libcommon/getdir.c	    2019-07-27 04:01:04.999464000 -0500
++++ heirloom/libcommon/getdir.c_new	2019-07-27 04:12:03.842812867 -0500
+@@ -59,7 +59,13 @@
+ #ifdef	__hpux
+ #define		_KERNEL
+ #endif	/* __hpux */
+-#include	<sys/dirent.h>
++
++// musl-libc fails to detected by the ifdef above
++// note: this will break for c-libs on esoteric unix-likes,
++// however we are focusing specifically on linux
++#include	<dirent.h>
++//#include	<sys/dirent.h>
++
+ #ifdef		__hpux
+ #ifndef	_INO64_T
+ typedef	unsigned long long	uint64_t;
