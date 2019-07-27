@@ -58,8 +58,7 @@ EOF
         build heirloom-devtools install
 
         # heirloom's makefile is a mess. just do this manually.
-        find heirloom -type d ! -name build ! -name libcommon \
-                ! -name libuxre | while read -r dir ; do
+        for dir in bc cpio dc diff file fmt pgrep stty ; do
             $INSTALL -Dm0755 heirloom/$dir/$dir "$PREFIX"/bin/$dir
             $INSTALL -Dm0644 heirloom/$dir/$dir.1 "$PREFIX"/share/man/man1/$dir.1
         done
