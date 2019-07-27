@@ -1,3 +1,8 @@
+all: nop
+
+nop:
+	:
+
 clean:
 	rm -f heirloom.pkg core log *~
 
