@@ -22,7 +22,8 @@ dummy: makefiles all
 .DEFAULT:
 	+ for i in $(SUBDIRS) ;\
 	do	\
-		if cd "$$i" 2> /dev/null ; then \
+		if [ -d "$$i" ] ; then \
+			cd "$$i" ; \
 			$(MAKE) $@ || exit ; \
 			cd - > /dev/null ; \
 		fi ; \

@@ -1,3 +1,36 @@
+# heirloom
+
+Removed from here is all that is already included between `sbase` and `ubase`, 
+as well as tools that are simply no longer used in the modern day.
+
+Also: `oawk` and `nawk` have been removed as `one-true-awk` is superior 
+in every way and is still developed.
+
+Some programs which you *might* still be want:
+* banner
+* bdiff
+* dircmp
+* mail
+* more
+* mvdir
+* news
+* random
+* sum
+* what
+
+If you wish to add these, copy the programs dir from the Heirloom Project
+repo and edit the makefile to include it.
+
+If you can give good arguments as to why a certain program
+shouldn't be excluded from hbase, create a github issue and I'll
+consider it.
+
+### With the above said...
+
+The following is the unedited readme from the Heirloom Project
+
+--------------------------------------
+
 README file for the Heirloom Toolchest
 ======================================
 
