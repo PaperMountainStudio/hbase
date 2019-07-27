@@ -1,11 +1,11 @@
 # heirloom-devtools
 
-Removed here is `sccs`.
+Removed here is `sccs` and bsd `make`.
 
-If you wish to add this, copy the `sccs` dir from the Heirloom Project
-repo and edit the makefile to include it.
+If you wish to add this, copy the `sccs` or `make` dir from
+the Heirloom Project repo and edit its makefile to include it.
 
-If you can give good arguments as to why it shouldn't be excluded 
+If you can give good arguments as to why these shouldn't be excluded 
 from hbase, create a github issue and I'll consider it.
 
 ### With the above said...
