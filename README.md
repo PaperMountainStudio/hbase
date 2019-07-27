@@ -9,6 +9,8 @@ project to be used in my [upcoming Linux distribution](http://github.com/mitchwe
 `hbase` contains programs taken from [The Heirloom Project](http://heirloom.sourceforge.net) 
 but as well `awk` from [one-true-awk](http://github.com/onetrueawk/awk).
 
+Patches are applied to cleanly compile under [musl-libc](http://musl-libc.org).
+
 ------
 
 ### What is included?
