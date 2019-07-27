@@ -1,32 +1,16 @@
 SHELL = /bin/sh
 
 SUBDIRS = build libwchar libcommon libuxre _install \
-	banner basename bc bdiff bfs \
-	cal calendar cat chmod chown \
-	cksum cmp col comm copy cp cpio csplit cut \
-	date dc dd deroff diff diff3 dircmp dirname df du \
-	echo ed env expand expr \
-	factor file find fmt fmtmsg fold \
-	getconf getopt grep groups hd head hostname id join \
-	kill line listusers ln logins logname ls \
-	mail man mesg mkdir mkfifo mknod more mvdir \
-	nawk news nice nl nohup oawk od \
-	paste pathchk pg pgrep pr printenv printf priocntl ps psrinfo pwd \
-	random renice rm rmdir \
-	sdiff sed setpgrp shl sleep sort spell split stty su sum sync \
-	tabs tail tapecntl tar tcopy tee test time touch tr true tsort tty \
-	ul uname uniq units users wc what who whoami whodo xargs yes
+	bc cpio csplit dc diff diff3 factor file fmt \
+	getopt groups id man more od pgrep sdiff \
+	stty tabs ul users
 
 dummy: makefiles all
 
 .DEFAULT:
 	+ for i in $(SUBDIRS) ;\
 	do	\
-		if [ -d "$$i" ] ; then \
-			cd "$$i" ; \
-			$(MAKE) $@ || exit ; \
-			cd - > /dev/null ; \
-		fi ; \
+		(cd "$$i" && $(MAKE) $@) || exit ; \
 	done
 	$(MAKE) -f Makefile $@
 
