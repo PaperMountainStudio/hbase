@@ -6,8 +6,6 @@ nop:
 clean:
 	rm -f heirloom.pkg core log *~
 
-MRPROPER = intro.1
-
 install: directories links
 
 directories:
@@ -94,4 +92,3 @@ links:
 	else \
 		sh build/crossln $(ROOT)$(MANDIR)/man1/oawk.1 $(ROOT)$(MANDIR)/man1/awk.1 $(ROOT); \
 	fi
-	$(SHELL) build/maninst -c -m 644 intro.1 $(ROOT)$(MANDIR)/man1/intro.1
