@@ -2,6 +2,7 @@
 
 : ${PREFIX:="$PWD/build"}
 : ${SHELL:=/bin/sh}
+: ${CC:=gcc}
 : ${INSTALL:=/usr/bin/install}
 : ${CFLAGS:="-0s -s"}
 : ${LDFLAGS:=-s}
@@ -16,9 +17,9 @@ do_make() {
     # rather than patching every makefile, just declare them inline.
     # we want all the files to end up in the same directories.
     make CFLAGS="-static --static $CFLAGS" LDFLAGS="-static --static $LDFLAGS" \
-         SHELL="$SHELL" POSIX_SHELL="$SHELL" INSTALL="$INSTALL" \
-         PREFIX="$PREFIX"  MANDIR="$MANDIR"  BINDIR="$BINDIR" \
-         SUSBIN="$BINDIR" $1
+         CC="$CC" cc="$CC" SHELL="$SHELL" POSIX_SHELL="$SHELL" \
+         INSTALL="$INSTALL" PREFIX="$PREFIX"  MANDIR="$MANDIR"  \
+         BINDIR="$BINDIR" SUSBIN="$BINDIR" $1
 }
 build() {
     cd "$1"
