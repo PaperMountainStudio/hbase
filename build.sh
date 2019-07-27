@@ -4,6 +4,7 @@
 : ${SHELL:=/bin/sh}
 : ${CC:=gcc}
 : ${INSTALL:=/usr/bin/install}
+: ${YACC:=yacc}
 : ${CFLAGS:="-0s -s"}
 : ${LDFLAGS:=-s}
 : ${MANDIR:="$PREFIX/share/man"}
@@ -18,7 +19,7 @@ do_make() {
     # we want all the files to end up in the same directories.
     make CFLAGS="-static --static $CFLAGS" CFLAGSS="-static --static $CFLAGS" \
          LDFLAGS="-static --static $LDFLAGS" CC="$CC" cc="$CC" SHELL="$SHELL" \
-         POSIX_SHELL="$SHELL" INSTALL="$INSTALL" \
+         POSIX_SHELL="$SHELL" YACC="$YACC" INSTALL="$INSTALL" \
          PREFIX="$PREFIX"  MANDIR="$MANDIR"  \
          BINDIR="$BINDIR" SUSBIN="$BINDIR" $1
 }
