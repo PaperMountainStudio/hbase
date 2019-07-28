@@ -4,7 +4,7 @@ Originally started by the [Morpheus Linux](http://git.2f30.org/hbase/log.html) p
 `hbase` is a collection of programs that complement [sbase](http://core.suckless.org/sbase) and [ubase](http://core.suckless.org/ubase).
 
 As Morpheus has since 2014 been abandoned, I am continuing the 
-project to be used in my [upcoming Linux distribution](http://github.com/mitchweaver/distro).
+project to be used in my upcoming Linux distribution, [bonsai](http://github.com/mitchweaver/bonsai).
 
 `hbase` contains programs taken from [The Heirloom Project](http://heirloom.sourceforge.net) 
 but as well `awk` from [one-true-awk](http://github.com/onetrueawk/awk).
