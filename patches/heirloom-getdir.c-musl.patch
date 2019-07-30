@@ -1,5 +1,5 @@
---- heirloom/libcommon/getdir.c.old 2019-07-27 04:01:04.999464000 -0500
-+++ heirloom/libcommon/getdir.c 2019-07-27 04:12:03.842812867 -0500
+--- heirloom/libcommon/getdir.c
++++ heirloom/libcommon/getdir.c
 @@ -59,7 +59,13 @@
  #ifdef	__hpux
  #define		_KERNEL
