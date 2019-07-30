@@ -62,7 +62,7 @@ EOF
             $INSTALL -Dm0755 heirloom/$dir/$dir "$PREFIX"/bin/$dir
             $INSTALL -Dm0644 heirloom/$dir/$dir.1 "$PREFIX"/share/man/man1/$dir.1
         done
-        $INSTALL -Dm0644 heirloom/file/magic "$PREFIX"/etc/magic
+        $INSTALL -Dm0644 heirloom/file/magic "$PREFIX"/lib/magic
         ln -sf pgrep "$PREFIX"/bin/pkill
         ;;
     *) 

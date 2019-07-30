@@ -74,7 +74,7 @@ DIETFLAGS =	CC="$(HOME)/src/diet gcc" HOSTCC="$(HOME)/src/diet gcc" \
 		CCSBIN=/5bin/ccs \
 		DEFLIB=/5bin/lib DEFSBIN=/5bin MANDIR=/tmp/__man__ \
 		DFLDIR=/etc/default SPELLHIST=/var/adm/spellhist \
-		SULOG=/var/log/sulog MAGIC=/5bin/lib/magic
+		SULOG=/var/log/sulog MAGIC=/lib/magic
 
 diet:
 	$(MAKE) $(DIETFLAGS)
