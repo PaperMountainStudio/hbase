@@ -21,7 +21,9 @@ do_make() {
          LDFLAGS="-static --static $LDFLAGS" CC="$CC" cc="$CC" SHELL="$SHELL" \
          POSIX_SHELL="$SHELL" YACC="$YACC" INSTALL="$INSTALL" \
          PREFIX="$PREFIX"  MANDIR="$MANDIR"  \
-         BINDIR="$BINDIR" SUSBIN="$BINDIR" $1
+         BINDIR="$BINDIR" SUSBIN="$BINDIR" SU3BIN="$BINDIR" UCBBIN="$BINDIR" \
+         DEFLIB="$LIBDIR" DEFBIN="$BINDIR" MAGIC="/lib/magic" \
+         DEFSBIN="$BINDIR" SV3BIN="$BINDIR" $1
 }
 build() {
     cd "$1"
