@@ -1,15 +1,15 @@
 #!/bin/sh -e
 
-: ${PREFIX:="$PWD/build"}
-: ${SHELL:=/bin/sh}
-: ${CC:=gcc}
-: ${INSTALL:=/usr/bin/install}
-: ${YACC:=yacc}
-: ${CFLAGS:="-0s -s"}
-: ${LDFLAGS:=-s}
-: ${MANDIR:="$PREFIX/share/man"}
-: ${BINDIR:="$PREFIX/bin"}
-: ${LIBDIR:="$PREFIX/lib"}
+: "${PREFIX:="$PWD/build"}"
+: "${SHELL:=/bin/sh}"
+: "${CC:=gcc}"
+: "${INSTALL:=/usr/bin/install}"
+: "${YACC:=yacc}"
+: "${CFLAGS:="-0s -s"}"
+: "${LDFLAGS:=-s}"
+: "${MANDIR:="$PREFIX/share/man"}"
+: "${BINDIR:="$PREFIX/bin"}"
+: "${LIBDIR:="$PREFIX/lib"}"
 
 mkdir -p "$PREFIX"
 
@@ -63,7 +63,7 @@ EOF
             $INSTALL -Dm0644 heirloom/$dir/$dir.1 "$PREFIX"/share/man/man1/$dir.1
         done
         $INSTALL -Dm0644 heirloom/file/magic "$PREFIX"/etc/magic
-        ln -s pgrep "$PREFIX"/bin/pkill
+        ln -sf pgrep "$PREFIX"/bin/pkill
         ;;
     *) 
         patchall
