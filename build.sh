@@ -3,6 +3,7 @@
 : "${PREFIX:="$PWD/build"}"
 : "${SHELL:=/bin/sh}"
 : "${CC:=gcc}"
+: "${HOSTCC:=$CC}"
 : "${INSTALL:=/usr/bin/install}"
 : "${YACC:=yacc}"
 : "${CFLAGS:="-0s -s"}"
@@ -18,12 +19,11 @@ do_make() {
     # rather than patching every makefile, just declare them inline.
     # we want all the files to end up in the same directories.
     make CFLAGS="-static --static $CFLAGS" CFLAGSS="-static --static $CFLAGS" \
-         LDFLAGS="-static --static $LDFLAGS" CC="$CC" cc="$CC" SHELL="$SHELL" \
-         POSIX_SHELL="$SHELL" YACC="$YACC" INSTALL="$INSTALL" \
-         PREFIX="$PREFIX"  MANDIR="$MANDIR"  \
-         BINDIR="$BINDIR" SUSBIN="$BINDIR" SU3BIN="$BINDIR" UCBBIN="$BINDIR" \
-         DEFLIB="$LIBDIR" DEFBIN="$BINDIR" MAGIC="/lib/magic" \
-         DEFSBIN="$BINDIR" SV3BIN="$BINDIR" $1
+         LDFLAGS="-static --static $LDFLAGS" CC="$CC" cc="$CC" HOSTCC="$CC" \
+         POSIX_SHELL="$SHELL" SHELL="$SHELL" YACC="$YACC" INSTALL="$INSTALL" \
+         PREFIX="$PREFIX"  MANDIR="$MANDIR" BINDIR="$BINDIR" SUSBIN="$BINDIR" \
+         SU3BIN="$BINDIR" UCBBIN="$BINDIR" DEFLIB="$LIBDIR" DEFBIN="$BINDIR" \
+         MAGIC="/lib/magic" DEFSBIN="$BINDIR" SV3BIN="$BINDIR" $1
 }
 build() {
     cd "$1"
