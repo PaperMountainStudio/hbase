@@ -30,7 +30,6 @@
  */
 
 #include <sys/types.h>
-#include <sys/sysmacros.h>
 #include <sys/stat.h>
 #ifdef	__linux__
 #if !defined (__UCLIBC__) && !defined (__dietlibc__)

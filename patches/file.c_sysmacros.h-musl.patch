@@ -1,0 +1,14 @@
+--- heirloom/file/file.c
++++ heirloom/file/file.c
+@@ -52,10 +52,8 @@
+ static const char sccsid[] USED = "@(#)file.sl	1.33 (gritter) 4/14/06";
+ #endif	/* !SUS */
+ 
+-#ifdef	__GLIBC__
+-#include <sys/sysmacros.h>
+-#endif
+ #include <sys/types.h>
++#include <sys/sysmacros.h>
+ #include <sys/param.h>
+ #include <sys/stat.h>
+ #include <stdio.h>
