@@ -70,7 +70,7 @@ EOF
         build heirloom-devtools install
 
         # heirloom's makefile is a mess. just do this manually.
-        for dir in bc col cpio dc diff file fmt pgrep stty ; do
+        for dir in bc col cpio csplit dc diff file fmt pgrep stty ; do
             $INSTALL -Dm0755 heirloom/$dir/$dir "$PREFIX"/bin/$dir
             $INSTALL -Dm0644 heirloom/$dir/$dir.1 "$PREFIX"/share/man/man1/$dir.1
         done

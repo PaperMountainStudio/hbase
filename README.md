@@ -19,6 +19,7 @@ from **heirloom:**
 * bc
 * col
 * cpio
+* csplit
 * dc
 * diff
 * file
@@ -48,7 +49,6 @@ conflict with the suckless ideology of `sbase` and `ubase`.
 Some programs which you ***might*** still want:
 * banner
 * bdiff
-* csplit
 * diff3
 * dircmp
 * factor
