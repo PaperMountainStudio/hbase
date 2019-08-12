@@ -1,16 +1,23 @@
-#!/bin/sh -e
+#!/bin/sh
+#
+# http://github.com/mitchweaver/hbase
+#
 
-: "${PREFIX:="$PWD/build"}"
-: "${SHELL:=/bin/sh}"
-: "${CC:=gcc}"
-: "${HOSTCC:=$CC}"
-: "${INSTALL:=/usr/bin/install}"
-: "${YACC:=yacc}"
-: "${CFLAGS:="-0s -s"}"
-: "${LDFLAGS:=-s}"
-: "${MANDIR:="$PREFIX/share/man"}"
-: "${BINDIR:="$PREFIX/bin"}"
-: "${LIBDIR:="$PREFIX/lib"}"
+: \
+"${PREFIX:="$PWD/build"}" \
+"${SHELL:=/bin/sh}" \
+"${CC:=gcc}" \
+"${HOSTCC:=$CC}" \
+"${INSTALL:=/usr/bin/install}" \
+"${CFLAGS:="-0s -s"}" \
+"${LDFLAGS:=-s}" \
+"${MANDIR:="$PREFIX/share/man"}" \
+"${BINDIR:="$PREFIX/bin"}" \
+"${LIBDIR:="$PREFIX/lib"}"
+
+# build yacc first, then use it to build everythin else.
+# this way yacc is not needed on the host system.
+YACC="$PWD/heirloom-devtools/yacc/yacc -d -P $PWD/heirloom-devtools/yacc/yaccpar"
 
 mkdir -p "$PREFIX"
 
@@ -19,17 +26,19 @@ do_make() {
     # rather than patching every makefile, just declare them inline.
     # we want all the files to end up in the same directories.
     make CFLAGS="-static --static $CFLAGS" CFLAGSS="-static --static $CFLAGS" \
-         LDFLAGS="-static --static $LDFLAGS" CC="$CC" cc="$CC" HOSTCC="$CC" \
-         POSIX_SHELL="$SHELL" SHELL="$SHELL" YACC="$YACC" INSTALL="$INSTALL" \
-         PREFIX="$PREFIX"  MANDIR="$MANDIR" BINDIR="$BINDIR" SUSBIN="$BINDIR" \
-         SU3BIN="$BINDIR" UCBBIN="$BINDIR" DEFLIB="$LIBDIR" DEFBIN="$BINDIR" \
-         MAGIC="/lib/magic" DEFSBIN="$BINDIR" SV3BIN="$BINDIR" $1
+        LDFLAGS="-static --static $LDFLAGS" CC="$CC" cc="$CC" HOSTCC="$CC" \
+        POSIX_SHELL="$SHELL" SHELL="$SHELL" YACC="$YACC" INSTALL="$INSTALL" \
+        PREFIX="$PREFIX"  MANDIR="$MANDIR" BINDIR="$BINDIR" SUSBIN="$BINDIR" \
+        SU3BIN="$BINDIR" UCBBIN="$BINDIR" DEFLIB="$LIBDIR" DEFBIN="$BINDIR" \
+        MAGIC="/lib/magic" DEFSBIN="$BINDIR" SV3BIN="$BINDIR" $1
 }
+
 build() {
     cd "$1"
     do_make "$2"
     cd ..
 }
+
 patchall() {
     find patches -type f | while read -r patch ; do
         patch -p0 < "$patch"
@@ -53,6 +62,7 @@ EOF
         exit
         ;;
     install)
+        # one-true-awk
         $INSTALL -Dm0755 one-true-awk/a.out "$PREFIX"/bin/awk
         $INSTALL -Dm0644 one-true-awk/awk.1 "$PREFIX"/share/man/man1/awk.1
 
