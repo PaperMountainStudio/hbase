@@ -56,6 +56,7 @@ static const char sccsid[] USED = "@(#)file.sl	1.33 (gritter) 4/14/06";
 #include <sys/sysmacros.h>
 #endif
 #include <sys/types.h>
+#include <sys/sysmacros.h>
 #include <sys/param.h>
 #include <sys/stat.h>
 #include <stdio.h>
