@@ -17,6 +17,7 @@ Patches are applied to cleanly compile under [musl-libc](http://musl-libc.org).
 
 from **heirloom:**
 * bc
+* col
 * cpio
 * dc
 * diff

@@ -1,6 +1,6 @@
 SHELL = /bin/sh
 
-SUBDIRS = libcommon libuxre bc cpio dc diff file fmt pgrep stty
+SUBDIRS = libcommon libuxre bc col cpio dc diff file fmt pgrep stty
 
 dummy: makefiles all
 
